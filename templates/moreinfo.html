@@ -1,0 +1,37 @@
+{% extends "layout.html" %} 
+{% block style %}
+
+
+
+ {% endblock %} 
+ 
+ 
+ {% block content %} 
+ <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 mt-5">
+        <div class="card">
+            {% for product in product %}
+          <img src="../static/IMG/{{ product[5] }}" class="card-img-top" alt="Image du produit">
+          <div class="card-body">
+            <h5 class="card-title">{{ product[1]  }}</h5>
+            <p class="card-text">{{ product[2] }}</p>
+            <p class="card-text">{{ product[3] }}</p>
+            {%  endfor %}
+            <hr>
+            <form action="/add_to_cart?id_pro={{ id }}" method="post">
+              <div class="form-group">
+                <label for="quantity">Quantité :</label>
+          <input type="number" class="form-control" id="quantity" name="quantity" min="1"  required>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+            </form>
+            </div>
+           
+          
+        </div>
+      </div>
+    </div>
+  </div>
+ {% endblock %}

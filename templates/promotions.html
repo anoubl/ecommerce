@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1>Promotions</h1>
+    {% if promotions %}
+      {% for promotion in promotions %}
+        <div class="card">
+          <div class="card-header">
+            <h3>{{ promotion.titre }}</h3>
+          </div>
+          <div class="card-body">
+            <p>{{ promotion.description }}</p>
+            <p>Date de début : {{ promotion.date_debut }}</p>
+            <p>Date de fin : {{ promotion.date_fin }}</p>
+            <p>{{ promotion.nom }}</p>
+          </div>
+        </div>
+        <br>
+      {% endfor %}
+    {% else %}
+      <p>Aucune promotion disponible pour le moment.</p>
+    {% endif %}
+  </div>
+{% endblock %}

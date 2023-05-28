@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page de connexion</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-image: url("../static/IMG/ecommerce.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      
+    
+</style>
+
+</head>
+<body>
+    <script>
+        function checkPasswords() {
+          var password1 = document.getElementById("password").value;
+          var password2 = document.getElementById("confirm_password").value;
+        
+          if (password1 !== password2) {
+            alert("Les mots de passe ne correspondent pas !");
+            return false;
+          }
+        
+          return true;
+        }
+        </script>
+        
+  <div class="container">
+    <h1>Inscription</h1>
+    <form method="POST" action="/traitement_register" onsubmit="return checkPasswords()">
+      <div class="form-group">
+        <label >Prénom</label>
+        <input type="text" class="form-control"  value=" " name="prenom" required>
+      </div>
+      <div class="form-group">
+        <label >Nom</label>
+        <input type="text" class="form-control"  value=" " name="nom" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Adresse e-mail</label>
+        <input type="email" class="form-control"   value="-"  name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm_password">Confirmer le mot de passe</label>
+        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Adresse</label>
+        <input type="text" class="form-control" id="address" name="adresse" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Téléphone</label>
+        <input type="text" class="form-control" id="phone" name="telephone" required>
+      </div>
+      <button type="submit" class="btn btn-primary">S'inscrire</button>
+      <a  href="/" class="btn btn-success">Se connecter</a>
+    </form>
+  </div>
+</body>

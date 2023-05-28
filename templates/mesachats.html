@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1>Mes Achats</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Produit</th>
+          <th>Prix</th>
+          <th>Quantité</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for achat in achats %}
+        <tr>
+          <td>{{ achat.date }}</td>
+          <td>{{ achat.nom }}</td>
+          <td>{{ achat.prix }}</td>
+          <td>{{ achat.qte }}</td>
+          <td>{{ achat.total }}€</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

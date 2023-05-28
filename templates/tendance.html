@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1>Tendances du moment</h1>
+    <div class="row">
+      {% for tendance in tendances %}
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../static/IMG/{{ tendance.image_url }}" class="card-img-top" alt="{{ tendance.titre }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ tendance.titre }}</h5>
+              <p class="card-text">{{ tendance.description }}</p>
+              <a href="#" class="btn btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

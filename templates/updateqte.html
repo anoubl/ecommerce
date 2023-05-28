@@ -1,0 +1,22 @@
+{% extends "layout.html" %} 
+{% block style %}
+
+
+
+ {% endblock %} 
+ 
+ 
+ {% block content %} 
+ <div class="container">
+    <h5 >Modifier le produit</h5>
+ <form action="/update_panier?id_panier={{ id_panier }}&prix={{ prix }}" method="post">
+    <div class="form-group">
+      <label for="quantity">Quantité:</label>
+      <input type="number" class="form-control" id="quantity" name="quantity" min="1" required>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Modifier</button>
+    <a type="button" class="btn btn-primary" href="/panier">Annuler</a>
+  </form>
+</div>
+ {% endblock %}

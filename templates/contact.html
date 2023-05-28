@@ -1,0 +1,35 @@
+{% extends "layout.html" %} 
+{% block style %}
+
+
+
+ {% endblock %} 
+ 
+ 
+ {% block content %} 
+ 
+
+<div class="container">
+    {% if message  %}
+    <p class="text-primary">{{ message }}</p>
+    {% endif %}
+<h1>Contactez-nous</h1>
+<p>N'hésitez pas à nous contacter pour toute question ou demande.</p>
+<form action="/envoyer_email" method="POST">
+<div class="mb-3">
+    <label for="name" class="form-label">Nom</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+</div>
+<div class="mb-3">
+    <label for="email" class="form-label">Adresse e-mail</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+</div>
+<div class="mb-3">
+    <label for="message" class="form-label">Message</label>
+    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+</div>
+
+{% endblock %}
